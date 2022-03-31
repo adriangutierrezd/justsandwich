@@ -1,6 +1,5 @@
 <?php
 
-
 $foods = [
     $plato12 = [
         "name" => "Sandwich de jamón y queso",
@@ -139,36 +138,20 @@ $foods = [
         "category" => "postres",
         "vegetarian" => 0,
         "vegan" => 0,
-    ]
-];
+    ],
 
-$categories = [
-    $sandwiches = [
-        "name" => "Sándwiches",
-        "href" => "sandwiches"
-    ],
-    $aperitivos = [
-        "name" => "Aperitivos",
-        "href" => "aperitivos"
-    ],
-    $bebidas = [
-        "name" => "Bebidas",
-        "href" => "bebidas"
-    ],
-    $postres = [
-        "name" => "Postres",
-        "href" => "postres"
-    ],
+
+
 ];
 
 
+if(isset($_GET['catg'])){
+    $ctg = $_GET['catg'];
+    $foods = array_filter($foods, function ($food) {
+        return ($food['category'] == ( $_GET['catg']));
+    });
+}
 
+echo json_encode($foods);
 ?>
 
-<?php foreach($categories as $category) : ?>
-    <a 
-    class="py-2 px-4 hover:bg-indigo-600 hover:text-amber-50 duration-75 menu-navigation text-center <?php echo ($ctg == ($category['href']) ? 'bg-indigo-600 text-amber-50' : '');  ?>" 
-    href="#" onclick="show('<?= $category['href'] ?>')">
-        <?php echo($category['name'])?>
-    </a>
-<?php endforeach; ?>

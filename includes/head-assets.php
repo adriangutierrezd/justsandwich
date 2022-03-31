@@ -10,3 +10,4 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <!-- JS -->
     <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/foods.js" defer></script>
