@@ -1,0 +1,6 @@
+<ifModule mod_rewrite.c>
+    RewriteEngine on
+    ErrorDocument 404 http://localhost/justsandwich/
+    RewriteCond %{SCRIPT_FILENAME} !-d
+    RewriteCond %{SCRIPT_FILENAME} !-f
+</ifModule>
