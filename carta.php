@@ -1,16 +1,3 @@
-<?php
-    $foods = array();
-    $array["foods"] = [
-        ["name" => 'Plato 1', 'description' => 'description 1', 'price' => '3', 'category' => 'menus', 'image' => ''],
-        ["name" => 'Plato 2', 'description' => 'description 2', 'price' => '8', 'category' => 'hjd', 'image' => ''],
-        ["name" => 'Plato 3', 'description' => 'description 3', 'price' => '4', 'category' => 'todo', 'image' => ''],
-        ["name" => 'Plato 4', 'description' => 'description 4', 'price' => '9', 'category' => 'menus', 'image' => ''],
-    
-    ];
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -34,13 +21,12 @@
             </div>
         </div>
 
-        <?php if(isset($_GET['catg'])){ ?>
+        <?php if(isset($_GET['catg'])): ?>
             <p class="text-right"><a href="carta.php" class="hover:text-rose-600">Ver carta completa</a></p>
-            
-        <?php } ?>
+        <?php endif; ?>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 my-4 fadein" id="menu">
-            <?php foreach($foods as $food){ ?>
+            <?php foreach($foods as $food): ?>
                 <div class="col-span-1 flex flex-col justify-between bg-indigo-50 shadow-md rounded-sm">
                     <div class="bg-gray-700">
                             <img src="<?php echo($food['image']) ?>" alt="" class="object-contain" loading="lazy">
@@ -59,7 +45,7 @@
                         </div>
                     
                 </div>
-            <?php } ?>
+            <?php endforeach; ?>
         </div>
 
     </section>
