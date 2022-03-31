@@ -6,24 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carta</title>
     
-    <?php include 'includes/head-assets.php' ?>
+    <?php require_once 'includes/head-assets.php' ?>
 </head>
 <body class="bg-amber-50 relative" id="body">
     
-    <?php include 'includes/header.php' ?>
+    <?php require_once 'includes/header.php' ?>
 
     <section class="max-w-7xl mx-auto my-8 px-4">
         <h1 class="text-4xl sm:text-5xl text-gray-900 mb-6">Carta Just <span class="text-rose-600 proxima-nova">Sandwich</span></h1>
         <div class="flex items-center justify-end my-8">
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ml-auto w-full md:w-2/3 lg:w-1/2 bg-gray-100 p-4 rounded-sm shadow-md">
-                <?php include 'menu.php' ?>
+                <?php require_once 'includes/menu.php' ?>
             </div>
         </div>
 
-        <?php if(isset($_GET['catg'])): ?>
-            <p class="text-right"><a href="carta.php" class="hover:text-rose-600">Ver carta completa</a></p>
-        <?php endif; ?>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 my-4 fadein" id="menu">
             <?php foreach($foods as $food): ?>
@@ -47,7 +44,7 @@
                 </div>
             <?php endforeach; ?>
         </div>
-
+        <p class="text-right"><a href="carta.php" class="hover:text-rose-600">Ver carta completa</a></p>
     </section>
 
     <?php include 'includes/footer.php' ?>
